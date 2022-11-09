@@ -1,11 +1,11 @@
 
 import React from 'react';
 
-import './AboutProject.css';
+import './About.css';
 
 import NavTab from './NavTab';
 
-function AboutProject(props) {
+function About(props) {
 
     return (
         <section className='about'>
@@ -14,7 +14,7 @@ function AboutProject(props) {
             <div className='about__wrapper'>
                 <article className='about__article'>
                     <h4 className='about__title'>Дипломный проект включал 5 этапов</h4>
-                    <p className='about__text'>
+                    <p className='about__paragraph'>
                         Составление плана, работу над бэкендом,
                         вёрстку, добавление функциональности и
                         финальные доработки.
@@ -23,7 +23,7 @@ function AboutProject(props) {
 
                 <article className='about__article'>
                     <h4 className='about__title'>На выполнение диплома ушло 5 недель</h4>
-                    <p className='about__text'>
+                    <p className='about__paragraph'>
                         У каждого этапа был мягкий и жёсткий дедлайн,
                         которые нужно было соблюдать, чтобы успешно
                         защититься.
@@ -31,18 +31,18 @@ function AboutProject(props) {
                 </article>
             </div>
 
-            <ul className='about__steps'>
-                <li className='about__steps_week'>
-                    <p className='about__steps_week-item'>1 неделя</p>
-                    <p className='about__steps_week-item'>4 недели</p>
+            <ul className='about__stage'>
+                <li className='about__stage_title'>
+                    <p className='about__stage_title-item'>1 неделя</p>
+                    <p className='about__stage_title-item'>4 недели</p>
                 </li>
-                <li className='about__steps_tech'>
-                    <p className='about__steps_tech-item'>Back-end</p>
-                    <p className='about__steps_tech-item'>Front-end</p>
+                <li className='about__stage_cell'>
+                    <p className='about__stage_cell-item'>Back-end</p>
+                    <p className='about__stage_cell-item'>Front-end</p>
                 </li>
             </ul>
         </section>
     );
 }
 
-export default AboutProject;
+export default About;

@@ -5,10 +5,11 @@
     padding: 0 0 28px;
     margin: 0;
     font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 22px;
+    line-height: 1.2;
     text-align: left;
-    border-bottom: #000 1px solid;
+    color: white;
+    border-bottom: #DADADA 1px solid;
   }
   @media (min-width: 568px) {
     .nav-tab__title {

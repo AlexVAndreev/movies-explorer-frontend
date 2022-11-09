@@ -2,14 +2,14 @@
 import './App.css';
 
 import {Route, Switch} from 'react-router-dom';
-import AboutProject from '../Main/AboutProject';
+import Main from '../Main/Main'
 
 function App() {
   return (
     <div className="root">
       <Switch>
         <Route path='/'>
-        <AboutProject />
+        <Main />
         </Route>
         </Switch>
     </div>
