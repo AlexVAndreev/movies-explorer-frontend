@@ -3,6 +3,7 @@ import React from 'react';
 import './Main.css';
 import About from './About'
 import Hero from './Hero';
+import Tech from './Tech';
 
 function Main(props) {
 
@@ -10,6 +11,7 @@ function Main(props) {
         <div>
         <Hero />
         <About />
+        <Tech />
         </div>
     );
 }
