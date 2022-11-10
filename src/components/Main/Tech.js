@@ -6,7 +6,7 @@ import NavTab from './NavTab';
 
 function Tech(props) {
     return (
-        <section className='tech page-wrapper'>
+        <section className='tech page-wrapper' id='tech'>
             <NavTab text='Технологии' />
 
             <h3 className='tech__title'>7 технологий</h3>

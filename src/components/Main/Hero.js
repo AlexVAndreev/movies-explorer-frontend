@@ -11,9 +11,9 @@ function Hero({ ref }) {
                 <h1 className='hero__title'>Учебный проект студента факультета Веб-разработки.</h1>
             </div>
             <nav className='hero__navigation'>
-                <a className='hero__navigation-link'>О проекте</a>
-                <a className='hero__navigation-link'>Технологии</a>
-                <a className='hero__navigation-link'>Студент</a>
+                <a className='hero__navigation-link' href='#about'>О проекте</a>
+                <a className='hero__navigation-link' href='#tech' >Технологии</a>
+                <a className='hero__navigation-link' href='#aboutme'>Студент</a>
             </nav>
         </section>
     );

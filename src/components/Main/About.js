@@ -8,7 +8,7 @@ import NavTab from './NavTab';
 function About(props) {
 
     return (
-        <section className='about'>
+        <section className='about'  id='about'>
             <NavTab text='О проекте'/>
 
             <div className='about__wrapper'>
