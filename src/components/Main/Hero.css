@@ -69,3 +69,8 @@
   .hero__navigation-link:last-child{
     margin-right: 0;
   }
+  .hero__navigation-link:hover{
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.5s;
+  }
