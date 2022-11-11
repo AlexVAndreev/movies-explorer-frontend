@@ -10,14 +10,14 @@ function portfolio() {
         <ul className='portfolio__list'>
                     <li className='portfolio__item'>
                     <p className='portfolio__item-title'>Статичный сайт</p>
-                        <a className='portfolio-item_link' href='https://github.com/AlexVAndreev/how-to-learn'><img className='portfolio-img' src={linkPointer} alt='Watch' /></a>
+                        <a className='portfolio-item_link' href='https://github.com/AlexVAndreev/how-to-learn'><img className='portfolio-img' src={linkPointer} alt='link' /></a>
                     </li>
                     <li className='portfolio__item'>
                     <p className='portfolio__item-title'>Адаптивный сайт</p>
-                        <a className='portfolio-item_link' href='https://github.com/AlexVAndreev/russian-travel'><img className='portfolio-img' src={linkPointer} alt='Watch' /></a>
+                        <a className='portfolio-item_link' href='https://github.com/AlexVAndreev/russian-travel'><img className='portfolio-img' src={linkPointer} alt='link' /></a>
                     </li>
                     <li className='portfolio__item'>
-                    <p className='portfolio__item-title'>Одностраничное приложение</p><a className='portfolio-item_link' href='https://github.com/AlexVAndreev/react-mesto-auth'><img className='portfolio-img' src={linkPointer} alt='Watch' />
+                    <p className='portfolio__item-title'>Одностраничное приложение</p><a className='portfolio-item_link' href='https://github.com/AlexVAndreev/react-mesto-auth'><img className='portfolio-img' src={linkPointer} alt='link' />
                     </a>
                     </li>
                 </ul>

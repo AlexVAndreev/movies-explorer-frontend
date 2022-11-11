@@ -23,11 +23,18 @@
     border-bottom: solid 1px #424242;
     align-items: center;
 }
+
 .portfolio__item:last-child{
     border-style: none;
 }
 .portfolio__item-title{
     margin: 20px 0 19px;
     color: white;
-
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 400;
+}
+.portfolio-img:hover{
+    opacity: 0.6;
+    transition: 0.6s;
 }

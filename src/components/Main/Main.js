@@ -6,19 +6,21 @@ import Hero from './Hero';
 import Tech from './Tech';
 import AboutMe from './AboutMe';
 import Portfolio from './Portfolio';
-import Header from './Header'
+import Header from '../Common/Header'
+import Footer from '../Common/Footer';
 
 function Main(props) {
 
     return (
-        <div>
+        <>
         <Header />
         <Hero />
         <About />
         <Tech />
         <AboutMe />
         <Portfolio />
-        </div>
+        <Footer />
+        </>
     );
 }
 
