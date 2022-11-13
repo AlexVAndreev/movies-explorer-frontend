@@ -4,6 +4,8 @@ import './Movies.css';
 import Checkbox from '../Common/Checkbox';
 import Header from '../Common/Header';
 import Form from '../Common/Form';
+import Footer from '../Common/Footer';
+import MoviesCardList from './MoviesCardList';
 
 function Movies() {
 
@@ -12,6 +14,8 @@ function Movies() {
          <Header />
          <Form />
          <Checkbox />
+         <MoviesCardList />
+         <Footer/>
         </>
     );
 }
