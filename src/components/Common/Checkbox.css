@@ -1,0 +1,72 @@
+.checkbox {
+    padding: 44px 70px 43px 70px;
+    margin-bottom: 10px;
+    margin-right: 4px;
+    margin-left: 4px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px #424242 solid;
+}
+@media (min-width: 568px) {
+    .checkbox {
+        margin-top: 30px;
+        margin-bottom: 39px;
+   }
+}
+@media (min-width: 700px) {
+    .checkbox {
+        padding-top: 0;
+        padding-bottom: 40px;
+        margin-right: 0;
+        margin-left: 0;
+   }
+}
+.checkbox__label {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 18px;
+    cursor: pointer;
+}
+@media (min-width: 568px) {
+    .checkbox__label {
+        font-size: 12px;
+   }
+}
+.checkbox__input-invisible {
+    display: none;
+}
+.checkbox__input-visible {
+    position: relative;
+    display: block;
+    margin-right: 13px;
+    width: 36px;
+    height: 20px;
+    background-color: #ebebeb;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.checkbox__input-visible::before {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #232323;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+.checkbox__input-invisible:checked + .checkbox__input-visible {
+    background-color: #2be080;
+}
+.checkbox__input-invisible:checked + .checkbox__input-visible::before {
+    opacity: 1;
+    left: 18px;
+    background-color: white;
+}
