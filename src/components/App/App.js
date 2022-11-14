@@ -4,6 +4,7 @@ import './App.css';
 import {Route, Switch} from 'react-router-dom';
 import Main from '../Main/Main'
 import Movies from '../movies/Movies';
+import SavedMovies from '../SavedMovies/SavedMovies';
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
         </Route>
         <Route path='/movies'>
         <Movies />
+        </Route>
+        <Route path='/saved-movies'>
+        <SavedMovies/>
         </Route>
         </Switch>
     </div>
