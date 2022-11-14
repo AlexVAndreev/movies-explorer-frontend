@@ -3,13 +3,15 @@ import {useHistory} from "react-router-dom";
 
 import './Header.css';
 import logo from '../../images/logo.svg';
+import NavLogin from "./NavLogin";
+import NavLogout from "./NavLogout";
 
-function Header() {
+function Header({isLoggedIn}) {
     const history = useHistory();
 
     const [colorHeader, setColorHeader] = React.useState(false);
-
-    const changeColor = () => {
+    isLoggedIn=true;
+    function changeColor() {
         setColorHeader((color) => !color);
     }
 
@@ -22,10 +24,11 @@ function Header() {
         <header className={colorHeader ? 'header header__color' : 'header'}>
         
             <img src={logo} alt='logo' className='header__logo'/>
-            <nav className='header__select'>
+            {/* <nav className='header__select'>
                 <a className='header__signup'>Регистрация</a>
                 <button className='header__signin'>Войти</button>
-            </nav>
+            </nav> */}
+             {isLoggedIn ? <NavLogin/> : <NavLogout/>}
 
 
         

@@ -1,7 +1,6 @@
 import React from 'react';
 
 import './Form.css';
-import findButton from '../../images/find_button.svg'
 function Form() {
 
     return (
