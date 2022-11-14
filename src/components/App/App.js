@@ -1,10 +1,12 @@
-// import logo from './logo.svg';
 import './App.css';
 
 import {Route, Switch} from 'react-router-dom';
 import Main from '../Main/Main'
-import Movies from '../movies/Movies';
+import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
+import Profile from '../Auth/Profile';
+import Login from '../Auth/Login';
+import Register from '../Auth/Register'
 
 function App() {
   return (
@@ -18,6 +20,15 @@ function App() {
         </Route>
         <Route path='/saved-movies'>
         <SavedMovies/>
+        </Route>
+        <Route path='/profile'>
+        <Profile/>
+        </Route>
+        <Route path='/sign-in'>
+        <Login/>
+        </Route>
+        <Route path='/sign-up'>
+        <Register/>
         </Route>
         </Switch>
     </div>
