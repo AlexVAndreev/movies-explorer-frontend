@@ -1,21 +1,21 @@
 .saved-movies {
-    width: 90%;
+    width: 100%;
     padding: 0;
-    margin: 80px 10px 0;
+    /* margin-top: 80px; */
     display: flex;
     align-items: center;
     flex-direction: column;
   }
   @media (min-width: 568px) {
     .saved-movies {
-      margin-right: 30px;
-      margin-left: 30px;
+      /* margin-right: 30px;
+      margin-left: 30px; */
     }
   }
   @media (min-width: 1050px) {
     .saved-movies {
-      margin-right: 70px;
-      margin-left: 70px;
+      /* margin-right: 70px;
+      margin-left: 70px; */
     }
   }
   

@@ -4,6 +4,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-right: 70px;
   }
   @media (min-width: 568px) {
     .navigation {
@@ -38,6 +39,7 @@
     .navigation-main {
       width: 100%;
       display: flex;
+      margin-right: 70px;
       flex-direction: row;
       justify-content: flex-end;
     }

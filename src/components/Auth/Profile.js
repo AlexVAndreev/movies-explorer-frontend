@@ -17,47 +17,24 @@ const Profile = ({isLoggedIn}) => {
                             <p className='profile__data'>
                                 <span className='profile__data-span'>Имя</span>
                             </p>
-                            <input
-                                id='name'
-                                name='name'
-                                autoComplete='off'
-                                minLength='3'
-                                maxLength='30'
-                                type='text'
-                                required
-                            />
+                           <p className='profile__input'>
+                            Алекс
+                           </p>
                         </li>
 
                         <li className='profile__about-item'>
                             <p className='profile__data'>
                                 <span className='profile__data-span'>E-mail</span>
                             </p>
-                            <input
-                                id='email'
-                                name='email'
-                                className='profile__data'
-
-                                autoComplete='off'
-                                minLength='3'
-                                maxLength='30'
-                                type='email'
-                                required
-                            />
+                      <p className='profile__input'>
+                        awa3awa@yandex.ru
+                      </p>
                         </li>
                     </ul>
-
-                  
-
                     <div className='profile__buttons'>
                       <button type='button'className='profile__button'>
                             Редактировать
                         </button>
-
-                    
-                        <button type='submit' className='profile__button' >
-                            Сохранить
-                        </button>
-
                         <button onClick='' className='profile__button profile__button_exit'>
                             Выйти из аккаунта
                         </button>

@@ -1,6 +1,6 @@
 .header{
     background-color: #202020;
-    width: 100%;
+    width:100%;
     margin-top: 18px;
     margin-left: 70px;
     margin-right: 70px;
@@ -39,6 +39,5 @@
     transition: 0.5s;
 }
 .header__logo{
-    margin-top: 18px;
-    margin-left: 70px;
+margin-left: 5%;
 }
