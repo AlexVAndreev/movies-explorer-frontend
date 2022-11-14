@@ -9,8 +9,8 @@ function Footer({ ref }) {
             <div className='footer__wrapper'>
                 <p className='footer__date'>© 2022</p>
                 <div className='footer_link-wrapper'>
-                <a className='footer__link' href='#'>Яндекс.Практикум</a>
-                <a className='footer__link' href='#'>GitHub</a>
+                <a className='footer__link' href='https://praktikum.yandex.ru/'>Яндекс.Практикум</a>
+                <a className='footer__link' href='https://github.com/'>GitHub</a>
                 </div>
             </div>
         </footer>

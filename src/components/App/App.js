@@ -7,6 +7,7 @@ import SavedMovies from '../SavedMovies/SavedMovies';
 import Profile from '../Auth/Profile';
 import Login from '../Auth/Login';
 import Register from '../Auth/Register'
+import PageNotFound from '../PageNotFound/PageNotFound';
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
         </Route>
         <Route path='/sign-up'>
         <Register/>
+        </Route>
+        <Route path='*'>
+          <PageNotFound />
         </Route>
         </Switch>
     </div>

@@ -10,7 +10,7 @@ function Header({isLoggedIn}) {
     const history = useHistory();
 
     const [colorHeader, setColorHeader] = React.useState(false);
-    isLoggedIn=true;
+    isLoggedIn=false;
     function changeColor() {
         setColorHeader((color) => !color);
     }
@@ -21,17 +21,10 @@ function Header({isLoggedIn}) {
         }
     }, []);
     return (
-        <header className={colorHeader ? 'header header__color' : 'header'}>
-        
+        <header className={colorHeader ? 'header  header__color' : 'header'}>
+      
             <img src={logo} alt='logo' className='header__logo'/>
-            {/* <nav className='header__select'>
-                <a className='header__signup'>Регистрация</a>
-                <button className='header__signin'>Войти</button>
-            </nav> */}
-             {isLoggedIn ? <NavLogin/> : <NavLogout/>}
-
-
-        
+            {isLoggedIn ? <NavLogin/> : <NavLogout/>}
     </header>
 );
 }
