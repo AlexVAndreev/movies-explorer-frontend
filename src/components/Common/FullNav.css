@@ -1,6 +1,8 @@
 .full-navigation {
-    width: 62%;
+    width: 100%;
     display: flex;
+    color: white;
+    text-decoration: none;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -9,12 +11,14 @@
     margin: 0;
     padding: 0;
     list-style-type: none;
+    color: white;
     display: flex;
     flex-direction: row;
     align-items: center;
   }
   .full-navigation__list-item {
     margin-right: 16px;
+    text-decoration: none;
   }
   .full-navigation__list-item:last-child {
     margin-right: 0;

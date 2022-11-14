@@ -1,9 +1,7 @@
 .account-button {
     max-width: 100px;
     max-height: 32px;
-    padding: 8px 12px;
-    border-radius: 50px;
-    border: 2px rgba(160, 160, 160, 0.2) solid;
+    color: white;
     background-color: transparent;
     display: flex;
     flex-direction: row;
@@ -11,7 +9,7 @@
     cursor: pointer;
   }
   .account-button__img {
-    margin-right: 7px;
+    margin-left: 7px;
     max-width: 12px;
     max-height: 14px;
   }
@@ -22,5 +20,6 @@
     font-size: 14px;
     line-height: 16px;
     text-align: left;
+    text-decoration: none;
   }
   

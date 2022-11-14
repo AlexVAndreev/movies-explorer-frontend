@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 import './Navigation.css';
 
-import BlackButton from "../../images/profile_icon.svg";
+import BlackButton from "../../images/profile.png";
 
 const NavLogout = () => {
     return (

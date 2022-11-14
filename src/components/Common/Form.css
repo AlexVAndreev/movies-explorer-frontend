@@ -1,9 +1,9 @@
 .movies__form{
-    width: 100%;
+    width: 90%;
     display: flex;
     align-items: center;
     margin-top: 80px;
-    margin: 80px 70px 0 70px;
+    /* margin: 80px 70px 0 70px; */
 }
 .movies__form-input{
     width: 100%;
