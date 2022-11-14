@@ -16,7 +16,7 @@ const SavedMovies = ({isLoggedIn}) => {
             <Header isLoggedIn={isLoggedIn}/>
             <main className='saved-movies page-wrapper'>
                 <SearchForm/>
-                <Preloader/>
+                {/* <Preloader/> */}
                 <MoviesCardList/>
             </main>
             <Footer/>
