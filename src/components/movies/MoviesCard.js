@@ -5,6 +5,11 @@ import './MoviesCard.css';
 
 
 function MoviesCard() {
+    const [isSaved, setIsSaved] = React.useState(false);
+
+    const handleSaved = () =>{
+        setIsSaved(!isSaved);
+    }
 
     return (
         <article className='card' >
@@ -14,7 +19,7 @@ function MoviesCard() {
                     <h2 className='card__title'>Название фильма</h2>
                     <p className='card__subtitle'>6:66</p>
                 </div>
-                <button className='card__button card__button-not-save'/>
+                <button onClick={handleSaved} className={isSaved ? 'card__button card__button-save' : 'card__button card__button-not-save'}/>
             </header>
 
         </article>
