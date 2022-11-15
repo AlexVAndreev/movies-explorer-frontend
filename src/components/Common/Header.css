@@ -15,10 +15,11 @@
     background-color: #3DDC84;
     margin-right: 70px;
     border-radius: 3px;
+    text-align: center;
     height: 32px;
     width: 76px;
     font-size: 12px;
-    line-height: 1.2;
+    line-height: 32px;
     border: none;
 }
 .header__signin:hover{
@@ -28,7 +29,6 @@
 }
 .header__signup{
     color: white;
-    height: 32px;
     font-size: 12px;
     line-height: 1.2;
     margin-right: 30px;
@@ -41,4 +41,9 @@
 }
 .header__logo{
 margin-left: 5%;
+}
+.header__wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
