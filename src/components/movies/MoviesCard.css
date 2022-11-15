@@ -51,6 +51,7 @@
     background-image: url('../../images/delete.svg');
     background-color: #222222;
     border-radius: 36px;
+    align-self: start;
     transition: background 0.8s;
 }
 .card__button-delete:active {
