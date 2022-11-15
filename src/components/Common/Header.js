@@ -1,5 +1,5 @@
 import React from 'react';
-import {useHistory} from "react-router-dom";
+import {useHistory, Link} from "react-router-dom";
 
 import './Header.css';
 import logo from '../../images/logo.svg';
@@ -23,7 +23,7 @@ function Header({isLoggedIn}) {
     return (
         <header className={colorHeader ? 'header  header__color' : 'header'}>
       
-            <img src={logo} alt='logo' className='header__logo'/>
+        <Link to='/' className='header__logo'><img src={logo} alt='logo'/></Link>
             {isLoggedIn ? <NavLogin/> : <NavLogout/>}
     </header>
 );
