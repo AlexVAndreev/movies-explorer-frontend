@@ -1,10 +1,10 @@
 import React from 'react';
 
 import './SavedMovies.css';
-import '../Movies/Movies.css';
+import '../movies/Movies.css';
 
 import SearchForm from '../Common/Form';
-import MoviesCardList from '../Movies/MoviesCardList';
+import MoviesCardList from '../movies/MoviesCardList';
 import Preloader from "../Common/Preloader";
 import Footer from "../Common/Footer";
 import Header from "../Common/Header";
