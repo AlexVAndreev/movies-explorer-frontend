@@ -2,7 +2,7 @@ import './App.css';
 
 import {Route, Switch} from 'react-router-dom';
 import Main from '../Main/Main'
-import Movies from '../Movies/Movies';
+import Movies from '../movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
 import Profile from '../Auth/Profile';
 import Login from '../Auth/Login';
