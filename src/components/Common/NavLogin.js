@@ -40,7 +40,7 @@ const NavLogin = () => {
 
     return (
         <nav className='navigation-main'>
-            <button className='navigation-main__menu' onClick={() => setIsMenuActive(!isMenuActive)}/>
+            <button className='navigation-main__menu' onClick={() => setIsMenuActive(!isMenuActive)} type="button"/>
 
             {fullNav ?
                 (<FullNav/>) :

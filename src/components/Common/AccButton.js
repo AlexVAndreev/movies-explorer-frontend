@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 import './AccButton.css';
-import img from '../../images/profile.png';
+import img from '../../images/profile.svg';
 
 const AccountButton = () => {
     return (

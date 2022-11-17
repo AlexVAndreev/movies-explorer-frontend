@@ -11,8 +11,9 @@ function Form() {
                 className='movies__form-input'
                 value=''
                 placeholder="фильм"
+                required
             />
-             <button className='movies__form-button'> {'| >'}
+             <button className='movies__form-button'type="button"> {'| >'}
             </button>
             </form>
         </>

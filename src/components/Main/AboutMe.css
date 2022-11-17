@@ -19,10 +19,15 @@
   
 grid-template-rows: repeat(4,1fr);
 }
-@media (max-width:600px) {
+@media (max-width:635px) {
     .aboutme__wrapper{
         display: flex;
         flex-direction: column;
+    }
+    .aboutme__photo{
+    width: 255px;
+    height: 307px;
+
     }
 }
 .aboutme__name{
@@ -55,7 +60,7 @@ grid-template-rows: repeat(4,1fr);
     grid-row: 1/5;
     max-height: 327px;
     object-fit:cover;
-    width: 100%;
+    /* width: 100%; */
     margin-left: auto;
     justify-self: end;
 }
