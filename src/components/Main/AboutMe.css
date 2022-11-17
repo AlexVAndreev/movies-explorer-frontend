@@ -1,0 +1,66 @@
+.aboutme{
+    box-sizing: border-box;
+    background-color: #202020;
+    padding: 100px 70px;
+    padding-left: 70px;
+    padding-right: 70px;
+    color: white;
+    width: 100%;
+}
+.aboutme__wrapper{
+    margin-top: 66px;
+    width: 100%;
+    max-height: 270px;
+    display:grid;
+    column-gap: 30px;
+    grid-template-columns: 1fr 250px;
+    grid-auto-columns: max-content;
+    align-items: center;
+  
+grid-template-rows: repeat(4,1fr);
+}
+@media (max-width:635px) {
+    .aboutme__wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+    .aboutme__photo{
+    width: 255px;
+    height: 307px;
+
+    }
+}
+.aboutme__name{
+    font-size: 50px;
+    line-height: 1.2;
+    font-weight:400;
+}
+.aboutme__proffesion
+{
+    font-size: 18px;
+    line-height: 1.2;
+    margin: 0;
+
+}
+.aboutme__description{
+    font-size: 14px;
+    line-height: 1.2;
+    max-width: 600px;
+}
+.aboutme__github{
+    text-decoration: none;
+    color: white;
+    font-style: normal;
+    font-size: 14px;
+    margin-top: 30px;
+}
+.aboutme__photo{
+    border-radius: 10px;
+    grid-column: 2/3;
+    grid-row: 1/5;
+    max-height: 327px;
+    object-fit:cover;
+    /* width: 100%; */
+    margin-left: auto;
+    justify-self: end;
+}

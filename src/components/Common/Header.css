@@ -1,0 +1,50 @@
+.header{
+    background-color: #202020;
+    width:100%;
+    padding-top: 21px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__color{
+    background-color: #073042;
+}
+.header__signin{
+    background-color: #3DDC84;
+    margin-right: 70px;
+    border-radius: 3px;
+    text-align: center;
+    color: black;
+    height: 32px;
+    width: 76px;
+    font-size: 12px;
+    line-height: 32px;
+    font-weight: 500;
+    border: none;
+}
+.header__signin:hover{
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.5s;
+}
+.header__signup{
+    color: white;
+    font-size: 12px;
+    line-height: 1.2;
+    margin-right: 30px;
+    font-weight: 200;
+}
+.header__signup:hover{
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.5s;
+}
+.header__logo{
+margin-left: 5%;
+}
+.header__wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
