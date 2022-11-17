@@ -10,7 +10,7 @@ function Header({isLoggedIn}) {
     const history = useHistory();
 
     const [colorHeader, setColorHeader] = React.useState(false);
-    isLoggedIn=true;
+    isLoggedIn=false;
     function changeColor() {
         setColorHeader((color) => !color);
     }
