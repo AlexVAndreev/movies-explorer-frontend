@@ -1,4 +1,5 @@
 .nav-tab {
+  margin: auto;
     width: 100%;
   }
   .nav-tab__title {
@@ -13,6 +14,9 @@
   }
   @media (min-width: 568px) {
     .nav-tab__title {
+      /* padding-left: 70px; */
+      padding-right: 70px;
+      margin: auto;
       font-size: 22px;
       line-height: 27px;
     }

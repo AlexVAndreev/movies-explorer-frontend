@@ -41,7 +41,7 @@ const BurgerNav = ({active, setActive}) => {
                         </li>
                     </ul>
 
-                    <Link to='/profile'><AccountButton/></Link>
+                    <Link to='/profile' className='burger-menu__account_button'><AccountButton/></Link>
                 </div>
             </div>
         </>

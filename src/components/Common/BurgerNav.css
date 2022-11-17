@@ -64,7 +64,7 @@
     list-style-type: none;
   }
   .burger-menu__list_item {
-    margin-bottom: 24px;
+    margin-bottom: 28px;
   }
   .burger-menu__link {
     color: white;
@@ -77,4 +77,6 @@
   .burger-menu__link:hover {
     border-bottom: 1px #494949 solid;
   }
-  
+ .burger-menu__account_button{
+  margin-top: 620px;
+ }

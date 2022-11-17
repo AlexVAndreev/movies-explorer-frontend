@@ -1,6 +1,7 @@
 .portfolio {
     background-color: #202020;
-    width: 90%;
+    box-sizing: border-box;
+    width: 100%;
     padding: 0 70px 120px 70px;
 }
 .portfolio__header{
