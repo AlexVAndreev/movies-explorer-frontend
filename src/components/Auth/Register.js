@@ -4,8 +4,26 @@ import {Link} from 'react-router-dom';
 import './Auth.css';
 import './Profile.css';
 import logo from '../../images/logo.svg';
+import {Validations} from '../../utils/Validations'
 
-function Register(isLoggedIn) {
+function Register({signUp, registrationError, setRegistrationError}) {
+    const [errorMessage, setErrorMessage] = React.useState(false);
+
+    const {values, handleChange, validatorErrors, isValid, setIsValid} = Validations();
+
+    const handleSubmit = (evt) => {
+        evt.preventDefault();
+        setIsValid(false);
+
+        if (!values.email || !values.password || !values.name) {
+            return false;
+        }
+        signUp(values.email, values.password, values.name);
+    }
+
+    React.useEffect(() => {
+        setRegistrationError('');
+    }, []);
     return (
         <main className='auth'>
             <header className='auth__header'>
@@ -13,13 +31,15 @@ function Register(isLoggedIn) {
                 <h1 className='auth__title'>Добро пожаловать!</h1>
             </header>
 
-            <form className='auth__form' onSubmit=''>
+            <form className='auth__form' onSubmit={handleSubmit}>
                 <div className='auth-input'>
                     <p className='auth-input__text'>Имя</p>
                     <input
                         id='name'
                         name='name'
                         className='auth-input__input'
+                        onChange={handleChange}
+                        value={values.name}
                         minLength='3'
                         maxLength='30'
                         type='text' required
@@ -32,6 +52,8 @@ function Register(isLoggedIn) {
                         id='email'
                         name='email'
                         className='auth-input__input'
+                        onChange={handleChange}
+                        value={values.email}
                         pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'
                         type='email' required
                     />
@@ -46,11 +68,14 @@ function Register(isLoggedIn) {
                         minLength='3'
                         maxLength='30'
                         type='password' required
+                        onChange={handleChange}
+                        value={values.password}
+
                     />
                 </div>
 
-            </form>
             <button className='auth-button'>Зарегистрироваться</button>
+            </form>
             <Link to='/sign-in' className='auth__link'>Уже зарегистрированы?
                 <span className='auth__link-span'>Войти</span>
             </Link>
