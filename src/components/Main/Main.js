@@ -9,11 +9,11 @@ import Portfolio from './Portfolio';
 import Header from '../Common/Header'
 import Footer from '../Common/Footer';
 
-function Main(props) {
+function Main({isLoggedIn}) {
 
     return (
         <>
-        <Header />
+        <Header isLoggedIn={isLoggedIn}/>
         <Hero />
         <About />
         <Tech />

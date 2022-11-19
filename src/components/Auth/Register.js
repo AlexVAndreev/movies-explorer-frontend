@@ -6,7 +6,7 @@ import './Profile.css';
 import logo from '../../images/logo.svg';
 import {Validations} from '../../utils/Validations'
 
-function Register({signUp, registrationError, setRegistrationError}) {
+function Register({signUp, regError, setRegError}) {
     const [errorMessage, setErrorMessage] = React.useState(false);
 
     const {values, handleChange, validatorErrors, isValid, setIsValid} = Validations();
@@ -22,7 +22,7 @@ function Register({signUp, registrationError, setRegistrationError}) {
     }
 
     React.useEffect(() => {
-        setRegistrationError('');
+        setRegError('');
     }, []);
     return (
         <main className='auth'>
@@ -72,6 +72,28 @@ function Register({signUp, registrationError, setRegistrationError}) {
                         value={values.password}
 
                     />
+                </div>
+                <div className='auth__message'>
+                    {validatorErrors &&
+                    Object.values(validatorErrors).filter((item) => item !== "").length > 0 ?
+                        Object.entries(validatorErrors).map((item, ind) => {
+                            if (item[1] === '') item[0] = '';
+                            if (item[0] === 'email') item[0] = 'Email:';
+                            if (item[0] === 'password') item[0] = 'Пароль:';
+                            if (item[0] === 'name') item[0] = 'Имя:';
+                            return (
+                                <p key={ind} className='auth__message-text auth__message-text-error'>
+                                    {`${item[0]} ${item[1]}`}
+                                </p>
+                            );
+                        })
+                        : ""}
+
+
+                    {
+                        regError ?
+                            (<p className='profile__message-text profile__message-text-error'>{regError}</p>) : ''
+                    }
                 </div>
 
             <button className='auth-button'>Зарегистрироваться</button>

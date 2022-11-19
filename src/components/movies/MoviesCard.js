@@ -1,26 +1,95 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom';
-import imagesCard from '../../images/zim.jpg';
+import * as mainApi from '../../utils/MainApi';
 import './MoviesCard.css';
 
 
-function MoviesCard() {
-    const [isSaved, setIsSaved] = React.useState(false);
+function MoviesCard({movie, movies, setMovies, savedMovies, setSavedMovies}) {
+    const [isLiked, setIsLiked] = React.useState(false);
+
     const history = useHistory();
 
-    const handleSaved = () =>{
-        setIsSaved(!isSaved);
+    React.useEffect(() => {
+        savedMovies && savedMovies.some((card) => card.nameEN === movie.nameEN) ?
+            setIsLiked(true) : setIsLiked(false);
+    }, [savedMovies, movie.nameEN]);
+
+    const movieDuration = (duration) => {
+        const hours = Math.floor(duration / 60);
+        const minutes = duration % 60;
+        if (hours === 0) {
+            return `${minutes} мин`;
+        }
+        if (minutes !== 0) {
+            return `${hours} ч ${minutes} мин`;
+        }
+        return `${hours} ч`;
+    }
+
+    const handleSaveMovie = () => {
+        const jwt = localStorage.getItem('jwt');
+
+        if (!isLiked) {
+            mainApi.saveMovie(jwt, movie)
+                .then((res) => {
+                    if (res._id) {
+                        setSavedMovies([res, ...savedMovies]);
+                        setIsLiked(true);
+                    }
+                })
+                .catch(err => console.log(err));
+        }
+
+        if (isLiked) {
+            const liked = savedMovies.find((card) => card.movieId === movie.id);
+            mainApi.removeMovieFromSaved(liked._id, jwt)
+                .then((res) => {
+                    if (res) {
+                        setSavedMovies(savedMovies.filter((card) => card !== liked));
+                        setIsLiked(false);
+                    }
+                })
+                .catch(err => console.log(err));
+        }
+    }
+
+    const removeMovie = () => {
+        const jwt = localStorage.getItem('jwt');
+        mainApi.removeMovieFromSaved(movie._id, jwt)
+            .then((res) => {
+                if (res) {
+                    setMovies(movies.filter((item) => item._id !== movie._id));
+                }
+            })
+            .catch(err => console.log(err));
     }
 
     return (
-        <article className='card' >
-            <img className='card__img' src={imagesCard} alt='film name'></img>
+        <article className='card' id={movie._id}>
+            <img className='card__img'  src=
+                    {
+                        history.location.pathname === '/saved-movies' ? `${movie.image}` :
+                            `https://api.nomoreparties.co${movie.image.url}`
+                    } alt='film name'></img>
             <article className='card__header'>
                 <div className='card__text-wrapper'>
-                    <h2 className='card__title'>Название фильма</h2>
-                    <p className='card__subtitle'>6:66</p>
+                    <h2 className='card__title'>{movie.nameRU}</h2>
+                    <p className='card__subtitle'>{`${movieDuration(movie.duration)}`}</p>
                 </div>
-                <button onClick={handleSaved} className={(isSaved ? 'card__button card__button-save' : 'card__button card__button-not-save')+  (history.location.pathname === '/saved-movies' ? 'card__button card__button-delete' : '')}/>
+                <button
+                    onClick=
+                        {
+                            history.location.pathname !== '/saved-movies' ? handleSaveMovie : removeMovie
+                        }
+                    className=
+                        {
+                                'card__button card__button-not-save'
+                            +
+                                (isLiked ? 'card__button card__button-save' : 'card__button card__button-not-save')
+                            +
+                                (history.location.pathname === '/saved-movies' ? 'card__button card__button-delete' : '')
+                        }
+                />
             </article>
 
         </article>
