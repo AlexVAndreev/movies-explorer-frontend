@@ -1,19 +1,18 @@
-import React from 'react';
+import React from "react";
 
-import './Checkbox.css';
+import "./Checkbox.css";
 
 function Checkbox() {
+  return (
+    <>
+      <label className="checkbox">
+        <input className="checkbox__input-invisible" type="checkbox" />
+        <span className="checkbox__input-visible" />
 
-    return (
-        <>
-            <label className='checkbox'>
-                <input className='checkbox__input-invisible' type='checkbox'/>
-                <span className='checkbox__input-visible'/>
-
-                <span className='checkbox__label'>Короткометражки</span>
-            </label>
-        </>
-    );
+        <span className="checkbox__label">Короткометражки</span>
+      </label>
+    </>
+  );
 }
 
-export default Checkbox
+export default Checkbox;
