@@ -31,7 +31,6 @@ const NavLogin = () => {
   React.useEffect(() => {
     renderNav();
     window.addEventListener("resize", (evt) => changeWidth(evt));
-    console.log(fullNav);
     return () => {
       window.removeEventListener("resize", changeWidth);
     };
