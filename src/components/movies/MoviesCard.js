@@ -5,9 +5,8 @@ import "./MoviesCard.css";
 
 function MoviesCard({ movie, movies, setMovies, savedMovies, setSavedMovies }) {
   const [isLiked, setIsLiked] = React.useState(false);
-
+  console.log(movie);
   const history = useHistory();
-
   React.useEffect(() => {
     savedMovies && savedMovies.some((card) => card.nameEN === movie.nameEN)
       ? setIsLiked(true)
@@ -69,15 +68,17 @@ function MoviesCard({ movie, movies, setMovies, savedMovies, setSavedMovies }) {
 
   return (
     <article className="card" id={movie._id}>
-      <img
-        className="card__img"
-        src={
-          history.location.pathname === "/saved-movies"
-            ? `${movie.image}`
-            : `https://api.nomoreparties.co${movie.image.url}`
-        }
-        alt="film name"
-      ></img>
+      <a href={movie.trailerLink} target="_blank">
+        <img
+          className="card__img"
+          src={
+            history.location.pathname === "/saved-movies"
+              ? `${movie.image}`
+              : `https://api.nomoreparties.co${movie.image.url}`
+          }
+          alt="film name"
+        ></img>
+      </a>
       <article className="card__header">
         <div className="card__text-wrapper">
           <h2 className="card__title">{movie.nameRU}</h2>
