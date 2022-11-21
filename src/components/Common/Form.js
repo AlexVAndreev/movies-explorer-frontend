@@ -11,7 +11,6 @@ function Form({ searchMovie, inputError }) {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     searchMovie(inputValue);
-    setInputValue("");
   };
   return (
     <>

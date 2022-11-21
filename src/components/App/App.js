@@ -52,10 +52,9 @@ function App() {
     mainApi
       .register(email, password, name)
       .then((res) => {
-        if (res.ok) {
-          signIn(email, password);
-        }
-        setTimeout(history.push, 2000, "/sign-in");
+        console.log(res);
+        signIn(email, password);
+        // setTimeout(history.push, 1000, "/movies");
       })
       .catch(() => {
         setRegError("пользователь уже существет!");
@@ -79,7 +78,7 @@ function App() {
             });
         }
         setIsLoggedIn(true);
-        setTimeout(history.push, 2000, "/movies");
+        setTimeout(history.push, 1000, "/movies");
       })
       .catch(() => {
         setLoginError("Пользователь не найден!");
@@ -89,10 +88,12 @@ function App() {
 
   const signOut = () => {
     localStorage.clear();
-    localStorage.removeItem("saved");
-    setSavedMovies([]);
+    // localStorage.removeItem("saved");
+    // setSavedMovies([]);
     setMovies([]);
     setIsLoggedIn(false);
+    setHiddenInput(false);
+    setIsCheckBoxOpen(false);
     history.push("/");
   };
 
@@ -127,15 +128,10 @@ function App() {
           .getSavedMovies(jwt)
           .then((res) => {
             setSavedMovies(filterMovies(res, text));
-            // console.log(res);
-
-            const saved = JSON.parse(res);
-            localStorage.setItem("saved", saved);
           })
           .catch(() => setSearchError(true))
           .finally(() => setPreloader(false));
       }
-      // setSearchError(false);
     }
   };
 
