@@ -1,8 +1,8 @@
 import React from "react";
 
 import "./Form.css";
-function Form({ searchMovie, inputError }) {
-  const [inputValue, setInputValue] = React.useState("");
+function Form({ searchMovie, inputError, inputText }) {
+  const [inputValue, setInputValue] = React.useState(inputText);
 
   const handleChangeInput = (evt) => {
     setInputValue(evt.target.value);

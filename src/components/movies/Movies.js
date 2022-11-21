@@ -39,7 +39,11 @@ const Movies = ({
   return (
     <>
       <Header isLoggedIn={isLoggedIn} />
-      <Form searchMovie={searchMovie} inputError={inputError} />
+      <Form
+        searchMovie={searchMovie}
+        inputError={inputError}
+        inputText={localStorage.getItem("searchText")}
+      />
       {preloader && <Preloader />}
 
       <Checkbox handleToggleCheckBox={handleToggleCheckbox} />

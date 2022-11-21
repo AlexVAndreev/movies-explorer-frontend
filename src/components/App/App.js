@@ -160,6 +160,8 @@ function App() {
 
     const searchResult = JSON.stringify(searchList);
     localStorage.setItem("search", searchResult);
+    localStorage.setItem("searchText", text);
+    localStorage.setItem("checkBox", isCheckBoxOpen);
     return searchList;
   };
 
@@ -169,18 +171,27 @@ function App() {
     }
   }, [history]);
 
+  // React.useEffect(() => {
+  //   if (isLoggedIn) {
+  //     if (!localStorage.getItem("saved")) {
+  //       mainApi
+  //         .getSavedMovies(localStorage.getItem("jwt"))
+  //         .then((res) => {
+  //           setSavedMovies(res);
+  //         })
+  //         .catch((err) => console.log(err));
+  //     }
+  //   }
+  // }, [savedMovies, history]);
+
   React.useEffect(() => {
     if (isLoggedIn) {
-      if (!localStorage.getItem("saved")) {
-        mainApi
-          .getSavedMovies(localStorage.getItem("jwt"))
-          .then((res) => {
-            setSavedMovies(res);
-          })
-          .catch((err) => console.log(err));
+      if (localStorage.getItem("search")) {
+        setIsCheckBoxOpen(localStorage.getItem("checkBox"));
+        setMovies(localStorage.getItem("search"));
       }
     }
-  }, [savedMovies, history]);
+  }, [history]);
 
   React.useEffect(() => {
     if (savedMovies) {
