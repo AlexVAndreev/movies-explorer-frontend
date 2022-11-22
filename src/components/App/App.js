@@ -100,40 +100,39 @@ function App() {
   //поиск
   const searchMovie = (text) => {
     if (isLoggedIn) {
-      const jwt = localStorage.getItem("jwt");
+        const jwt = localStorage.getItem('jwt');
+        if (history.location.pathname === '/movies') {
+            if (!localStorage.getItem('all-movies')) {
+                setPreloader(true);
 
-      if (history.location.pathname === "/movies") {
-        if (!localStorage.getItem("all-movies")) {
-          setPreloader(true);
-          movieApi
-            .getMovies()
-            .then((data) => {
-              console.log(data);
-              setMovies(filterMovies(data, text));
-
-              const allMovies = JSON.stringify(data);
-              localStorage.setItem("all-movies", allMovies);
-            })
-            .catch(() => setInputError(true))
-            .finally(() => setPreloader(false));
-        } else {
-          const searchList = JSON.parse(localStorage.getItem("all-movies"));
-          setMovies(filterMovies(searchList, text));
+                movieApi.getMovies()
+                    .then((data) => {
+                        console.log('data');
+                        setMovies(filterMovies(data, text));
+                        const allMovies = JSON.stringify(data);
+                        localStorage.setItem('all-movies', allMovies);
+                    })
+                    .catch(() => setInputError(true))
+                    .finally(() => setPreloader(false));
+            } else {
+                const searchList = JSON.parse(localStorage.getItem('all-movies'));
+                setMovies(filterMovies(searchList, text));
+                console.log(searchList);
+            }
         }
-      }
-
-      if (history.location.pathname === "/saved-movies") {
-        setPreloader(true);
-        mainApi
-          .getSavedMovies(jwt)
-          .then((res) => {
-            setSavedMovies(filterMovies(res, text));
-          })
-          .catch(() => setSearchError(true))
-          .finally(() => setPreloader(false));
-      }
-    }
-  };
+        if (history.location.pathname === '/saved-movies') {
+            setPreloader(true);
+            mainApi.getSavedMovies(jwt)
+                .then((res) => {
+                    setSavedMovies(filterMovies(res, text));
+                    const saved = JSON.parse(res);
+                    localStorage.setItem('saved', saved);
+                })
+                .catch(() => setSearchError(true))
+                .finally(() => setPreloader(false));
+        }
+     }
+}
 
   const filterMovies = (data, text) => {
     const searchList = data.filter((movie) => {
@@ -170,18 +169,18 @@ function App() {
     }
   }, [history]);
 
-  // React.useEffect(() => {
-  //   if (isLoggedIn) {
-  //     if (!localStorage.getItem("saved")) {
-  //       mainApi
-  //         .getSavedMovies(localStorage.getItem("jwt"))
-  //         .then((res) => {
-  //           setSavedMovies(res);
-  //         })
-  //         .catch((err) => console.log(err));
-  //     }
-  //   }
-  // }, [savedMovies, history]);
+  React.useEffect(() => {
+    if (isLoggedIn) {
+      if (!localStorage.getItem("saved")) {
+        mainApi
+          .getSavedMovies(localStorage.getItem("jwt"))
+          .then((res) => {
+            setSavedMovies(res);
+          })
+          .catch( (err) => console.log(err));
+      }
+    }
+  }, [savedMovies, history]);
 
   React.useEffect(() => {
     if (isLoggedIn) {
@@ -256,7 +255,7 @@ function App() {
             searchError={searchError}
             setSearchError={setSearchError}
             inputError={inputError}
-            isCheckboxOpen={isCheckBoxOpen}
+            isCheckBoxOpen={isCheckBoxOpen}
             preloader={preloader}
           />
 
@@ -273,7 +272,7 @@ function App() {
             searchError={searchError}
             setSearchError={setSearchError}
             inputError={inputError}
-            isCheckboxOpen={isCheckBoxOpen}
+            isCheckBoxOpen={isCheckBoxOpen}
             preloader={preloader}
           />
 

@@ -20,6 +20,7 @@ const Movies = ({
   searchError,
   preloader,
   isLoggedIn,
+  isCheckBoxOpen
 }) => {
   React.useEffect(() => {
     const searchResult = localStorage.getItem("search");
@@ -42,11 +43,11 @@ const Movies = ({
       <Form
         searchMovie={searchMovie}
         inputError={inputError}
-        inputText={localStorage.getItem("searchText")}
+        inputText={localStorage.getItem("searchText")?localStorage.getItem("searchText"):''}
       />
       {preloader && <Preloader />}
 
-      <Checkbox handleToggleCheckBox={handleToggleCheckbox} />
+      <Checkbox handleToggleCheckBox={handleToggleCheckbox}  isCheckBoxOpen={isCheckBoxOpen}/>
 
       <h2
         className={

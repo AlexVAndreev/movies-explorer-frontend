@@ -22,6 +22,7 @@ const SavedMovies = ({
   onMovieDelete,
   isLoggedIn,
   setSearchError,
+  isCheckBoxOpen
 }) => {
   React.useEffect(() => {
     mainApi.getSavedMovies(localStorage.getItem("jwt")).then((res) => {
@@ -37,8 +38,8 @@ const SavedMovies = ({
     <>
       <Header isLoggedIn={isLoggedIn} />
       <main className="saved-movies page-wrapper">
-        <Form searchMovie={searchMovie} inputError={inputError} />
-        <CheckBox handleToggleCheckBox={handleToggleCheckbox} />
+        <Form searchMovie={searchMovie} inputError={inputError} inputText={localStorage.getItem("searchText")?localStorage.getItem("searchText"):''}/>
+        <CheckBox handleToggleCheckBox={handleToggleCheckbox}  isCheckBoxOpen={isCheckBoxOpen}/>
         <MoviesCardList
           setMovies={setSavedMovies}
           movies={savedMovies}
