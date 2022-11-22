@@ -88,8 +88,8 @@ function App() {
 
   const signOut = () => {
     localStorage.clear();
-    // localStorage.removeItem("saved");
-    // setSavedMovies([]);
+    localStorage.removeItem("saved");
+    setSavedMovies([]);
     setMovies([]);
     setIsLoggedIn(false);
     setHiddenInput(false);
@@ -117,7 +117,6 @@ function App() {
             } else {
                 const searchList = JSON.parse(localStorage.getItem('all-movies'));
                 setMovies(filterMovies(searchList, text));
-                console.log(searchList);
             }
         }
         if (history.location.pathname === '/saved-movies') {
@@ -158,16 +157,19 @@ function App() {
     }
 
     const searchResult = JSON.stringify(searchList);
+    if (history.location.pathname === '/movies'){
     localStorage.setItem("search", searchResult);
-    localStorage.setItem("searchText", text);
+    localStorage.setItem("searchText", text); 
+   }
+   
     return searchList;
   };
 
-  React.useEffect(() => {
-    if (localStorage.getItem("saved")) {
-      setSavedMovies(JSON.parse(localStorage.getItem("saved")));
-    }
-  }, [history]);
+  // React.useEffect(() => {
+  //   if (localStorage.getItem("saved")) {
+  //     setSavedMovies(JSON.parse(localStorage.getItem("saved")));
+  //   }
+  // }, [history]);
 
   React.useEffect(() => {
     if (isLoggedIn) {
@@ -183,13 +185,10 @@ function App() {
   }, [savedMovies, history]);
 
   React.useEffect(() => {
-    if (isLoggedIn) {
-      if (localStorage.getItem("search")) {
-        setIsCheckBoxOpen(localStorage.getItem("checkBox"));
-        setMovies(localStorage.getItem("search"));
-      }
-    }
-  }, [history]);
+    // searchMovie(localStorage.getItem('searchText'));
+    setMovies(JSON.parse(localStorage.getItem('search')));
+  }
+  , [movies]);
 
   React.useEffect(() => {
     if (savedMovies) {
