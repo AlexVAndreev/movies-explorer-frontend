@@ -160,6 +160,9 @@ function App() {
     if (history.location.pathname === '/movies'){
     localStorage.setItem("search", searchResult);
     localStorage.setItem("searchText", text); 
+   } else if (history.location.pathname === '/saved-movies'){
+    localStorage.setItem("searchSaved", searchResult);
+    localStorage.setItem("searchSavedText", text); 
    }
    
     return searchList;
@@ -191,9 +194,8 @@ function App() {
   , [movies]);
 
   React.useEffect(() => {
-    if (savedMovies) {
-      localStorage.setItem("saved", JSON.stringify(savedMovies));
-    }
+    setMovies(JSON.parse(localStorage.getItem('searchSaved')));
+
   }, [savedMovies]);
 
   // search

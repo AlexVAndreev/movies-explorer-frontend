@@ -38,7 +38,7 @@ const SavedMovies = ({
     <>
       <Header isLoggedIn={isLoggedIn} />
       <main className="saved-movies page-wrapper">
-        <Form searchMovie={searchMovie} inputError={inputError} inputText={localStorage.getItem("searchText")?localStorage.getItem("searchText"):''}/>
+        <Form searchMovie={searchMovie} inputError={inputError} inputText={localStorage.getItem("searchSavedText")?localStorage.getItem("searchSavedText"):''}/>
         <CheckBox handleToggleCheckBox={handleToggleCheckbox}  isCheckBoxOpen={isCheckBoxOpen}/>
         <MoviesCardList
           setMovies={setSavedMovies}
