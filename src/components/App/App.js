@@ -161,7 +161,6 @@ function App() {
     const searchResult = JSON.stringify(searchList);
     localStorage.setItem("search", searchResult);
     localStorage.setItem("searchText", text);
-    localStorage.setItem("checkBox", isCheckBoxOpen);
     return searchList;
   };
 
