@@ -54,7 +54,6 @@ function App() {
       .then((res) => {
         console.log(res);
         signIn(email, password);
-        // setTimeout(history.push, 1000, "/movies");
       })
       .catch(() => {
         setRegError("пользователь уже существет!");
@@ -159,7 +158,7 @@ function App() {
     const searchResult = JSON.stringify(searchList);
     if (history.location.pathname === '/movies'){
     localStorage.setItem("search", searchResult);
-    localStorage.setItem("searchText", text); 
+    localStorage.setItem("searchText", text);     
    } else if (history.location.pathname === '/saved-movies'){
     localStorage.setItem("searchSaved", searchResult);
     localStorage.setItem("searchSavedText", text); 
@@ -193,10 +192,6 @@ function App() {
   }
   , [movies]);
 
-  React.useEffect(() => {
-    setMovies(JSON.parse(localStorage.getItem('searchSaved')));
-
-  }, [savedMovies]);
 
   // search
   const handleToggleCheckbox = () => {

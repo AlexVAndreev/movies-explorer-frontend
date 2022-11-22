@@ -6,6 +6,7 @@ import "./MoviesCard.css";
 function MoviesCard({ movie, movies, setMovies, savedMovies, setSavedMovies }) {
   const [isLiked, setIsLiked] = React.useState(false);
   const history = useHistory();
+  
   React.useEffect(() => {
     savedMovies && savedMovies.some((card) => card.nameEN === movie.nameEN)
       ? setIsLiked(true)
