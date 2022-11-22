@@ -42,6 +42,7 @@ export const checkToken = (token) => {
 
 export const getSavedMovies = (token) => {
   return fetch(`${BASE_URL}/movies`, {
+    method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`,
       Accept: "application/json",

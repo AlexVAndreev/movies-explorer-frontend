@@ -167,11 +167,11 @@ function App() {
     return searchList;
   };
 
-  // React.useEffect(() => {
-  //   if (localStorage.getItem("saved")) {
-  //     setSavedMovies(JSON.parse(localStorage.getItem("saved")));
-  //   }
-  // }, [history]);
+  React.useEffect(() => {
+    if (localStorage.getItem("saved")) {
+      setSavedMovies(JSON.parse(localStorage.getItem("saved")));
+    }
+  }, [history]);
 
   React.useEffect(() => {
     if (isLoggedIn) {

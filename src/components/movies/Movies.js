@@ -22,20 +22,20 @@ const Movies = ({
   isLoggedIn,
   isCheckBoxOpen
 }) => {
-  // React.useEffect(() => {
-  //   const searchResult = localStorage.getItem("search");
-  //   if (
-  //     searchResult &&
-  //     searchResult !== "undefined" &&
-  //     JSON.parse(searchResult).length > 0
-  //   ) {
-  //     setMovies(JSON.parse(searchResult));
-  //   }
-  // }, [setMovies]);
+  React.useEffect(() => {
+    const searchResult = localStorage.getItem("search");
+    if (
+      searchResult &&
+      searchResult !== "undefined" &&
+      JSON.parse(searchResult).length > 0
+    ) {
+      setMovies(JSON.parse(searchResult));
+    }
+  }, [setMovies]);
 
-  // React.useEffect(() => {
-  //   setSearchError(false);
-  // }, []);
+  React.useEffect(() => {
+    setSearchError(false);
+  }, []);
 
   return (
     <>
