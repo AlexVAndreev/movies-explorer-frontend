@@ -31,7 +31,7 @@ const Movies = ({
     ) {
       setMovies(JSON.parse(searchResult));
     }
-  }, [setMovies]);
+  }, [movies]);
 
   React.useEffect(() => {
     setSearchError(false);

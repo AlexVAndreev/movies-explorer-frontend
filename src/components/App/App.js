@@ -103,11 +103,9 @@ function App() {
         if (history.location.pathname === '/movies') {
             if (!localStorage.getItem('all-movies')) {
                 setPreloader(true);
-
                 movieApi.getMovies()
                     .then((data) => {
-                        console.log('data');
-                        setMovies(filterMovies(data, text));
+                         setMovies(filterMovies(data, text));
                         const allMovies = JSON.stringify(data);
                         localStorage.setItem('all-movies', allMovies);
                     })
@@ -147,7 +145,6 @@ function App() {
     });
 
     if (searchList.length === 0) {
-      console.log(searchList.length);
       setSearchError(true);
       console.log(searchError);
     } else {
@@ -173,24 +170,23 @@ function App() {
     }
   }, [history]);
 
-  React.useEffect(() => {
-    if (isLoggedIn) {
-      if (!localStorage.getItem("saved")) {
-        mainApi
-          .getSavedMovies(localStorage.getItem("jwt"))
-          .then((res) => {
-            setSavedMovies(res);
-          })
-          .catch( (err) => console.log(err));
-      }
-    }
-  }, [savedMovies, history]);
+  // React.useEffect(() => {
+  //   if (isLoggedIn) {
+  //     if (!localStorage.getItem("saved")) {
+  //       mainApi
+  //         .getSavedMovies(localStorage.getItem("jwt"))
+  //         .then((res) => {
+  //           setSavedMovies(res);
+  //         })
+  //         .catch( (err) => console.log(err));
+  //     }
+  //   }
+  // }, [savedMovies]);
 
-  React.useEffect(() => {
-    // searchMovie(localStorage.getItem('searchText'));
-    setMovies(JSON.parse(localStorage.getItem('search')));
-  }
-  , [movies]);
+  // React.useEffect(() => {
+  //     setMovies(JSON.parse(localStorage.getItem('search')));
+  // }
+  // , [movies]);
 
 
   // search
