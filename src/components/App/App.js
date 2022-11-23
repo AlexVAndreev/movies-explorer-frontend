@@ -164,29 +164,29 @@ function App() {
     return searchList;
   };
 
+  // React.useEffect(() => {
+  //   if (localStorage.getItem("saved")) {
+  //     setSavedMovies(JSON.parse(localStorage.getItem("saved")));
+  //   }
+  // }, [history]);
+
   React.useEffect(() => {
-    if (localStorage.getItem("saved")) {
-      setSavedMovies(JSON.parse(localStorage.getItem("saved")));
+    if (isLoggedIn) {
+      if (!localStorage.getItem("saved")) {
+        mainApi
+          .getSavedMovies(localStorage.getItem("jwt"))
+          .then((res) => {
+            setSavedMovies(res);
+          })
+          .catch( (err) => console.log(err));
+      }
     }
   }, [history]);
 
   // React.useEffect(() => {
-  //   if (isLoggedIn) {
-  //     if (!localStorage.getItem("saved")) {
-  //       mainApi
-  //         .getSavedMovies(localStorage.getItem("jwt"))
-  //         .then((res) => {
-  //           setSavedMovies(res);
-  //         })
-  //         .catch( (err) => console.log(err));
-  //     }
-  //   }
-  // }, [savedMovies]);
-
-  // React.useEffect(() => {
   //     setMovies(JSON.parse(localStorage.getItem('search')));
   // }
-  // , [movies]);
+  // , []);
 
 
   // search
