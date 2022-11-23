@@ -1,0 +1,12 @@
+  .movies__search-error {
+    display: block;
+    margin: 0;
+    padding-top: 5%;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+  .movies__search-error-hidden {
+    display: none;
+  }
+  

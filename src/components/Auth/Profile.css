@@ -1,0 +1,125 @@
+.profile {
+  padding: 70px 30px 40px;
+  margin: 0;
+  width: 410px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .profile {
+    padding-left: 179px;
+    padding-right: 179px;
+  }
+}
+@media (min-width: 1280px) {
+  .profile {
+    /* padding: 74px 20% 70px; */
+  }
+}
+.profile__title {
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+}
+.profile__about-list {
+  padding: 0;
+  margin: 80px 0 0;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  list-style-type: none;
+}
+.profile__about-item {
+  width: 100%;
+  padding-bottom: 16px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #424242;
+}
+.profile__about-item:last-child {
+  margin-top: 17px;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.profile__data {
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  border: none;
+  text-align: right;
+  background-color: #202020;
+}
+.profile__buttons {
+  margin-top: 48vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+@media (min-width: 568px) {
+  .profile__buttons {
+    margin-top: 210px;
+  }
+}
+@media (min-width: 1280px) {
+  .profile__buttons {
+    margin-top: 220px;
+  }
+}
+.profile__button {
+  padding: 0;
+  margin-bottom: 16px;
+  font-weight: 400;
+  font-size: 12px;
+  color: white;
+  line-height: 15px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.profile__button:disabled {
+  cursor: auto;
+  color: #525252;
+}
+.profile__button:last-child {
+  margin-bottom: 0;
+}
+.profile__button_exit {
+  color: #ff4062;
+}
+@media (min-width: 568px) {
+  .profile__button {
+    font-size: 13px;
+    line-height: 16px;
+  }
+}
+.profile__form {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 410px;
+}
+.profile__message {
+  max-width: 100%;
+  margin-top: 20px;
+}
+.profile__message-text {
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: center;
+}
+.profile__input {
+  font-size: 11px;
+}

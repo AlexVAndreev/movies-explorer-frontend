@@ -1,0 +1,99 @@
+.card {
+    max-width: 300px;
+    max-height: 236px;
+    overflow: hidden;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: 0 -5px 5px rgba(4, 4, 4, 0.03);
+    background-color: #222222;
+}
+@media (min-width: 750px) {
+    .card {
+        max-width: 339px;
+        max-height: 258px;
+   }
+}
+@media (min-width: 1280px) {
+    .card {
+        max-width: 364px;
+        max-height: 271px;
+   }
+}
+.card__header {
+    padding: 14px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.card__button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    cursor: pointer;
+}
+.card__button-not-save {
+    background-image: url('../../images/saved.svg');
+    border-radius: 36px;
+    transition: background 0.8s;
+}
+.card__button-not-save:active {
+    background-color: #333;
+    transition: background 0.8s;
+}
+.card__button-save {
+    background-image: url('../../images/savedactive.svg'); 
+}
+.card__button-delete {
+    background-image: url('../../images/delete.svg');
+    background-color: #222222;
+    border-radius: 36px;
+    align-self: start;
+    transition: background 0.8s;
+}
+.card__button-delete:active {
+    background-color: #fff;
+    transition: background 0.8s;
+}
+.card__title {
+    margin: 0;
+    padding: 0;
+    max-width: 210px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.card__subtitle {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    color: #a0a0a0;
+}
+.card__img {
+    width: 100%;
+    height: 168px;
+    border-style: none;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    object-position: center;
+    object-fit: cover;
+    cursor: pointer;
+}
+@media (min-width: 750px) {
+    .card__img {
+        height: 190px;
+   }
+}
+@media (min-width: 1280px) {
+    .card__img {
+        height: 203px;
+   }
+}

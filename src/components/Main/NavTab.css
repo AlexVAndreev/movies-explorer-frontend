@@ -1,0 +1,24 @@
+.nav-tab {
+  margin: auto;
+    width: 100%;
+  }
+  .nav-tab__title {
+    padding: 0 0 23px;
+    margin: 0;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.2;
+    text-align: left;
+    color: white;
+    border-bottom: #DADADA 1px solid;
+  }
+  @media (min-width: 568px) {
+    .nav-tab__title {
+      /* padding-left: 70px; */
+      padding-right: 70px;
+      margin: auto;
+      font-size: 22px;
+      line-height: 27px;
+    }
+  }
+  
